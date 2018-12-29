@@ -2,7 +2,7 @@
 #define _SENSOR_LSM303DLHC_H
 
 /* LSM303DLHC 3D accelerometer and 3D magnetometer module
- * 
+ *
  * Attributes of accelerometer module
  * interface		RW status			Description							I/O format
  * reg				RW					Register interface					"0x%02x:0x%02x"
