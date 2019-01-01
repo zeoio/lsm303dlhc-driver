@@ -1,23 +1,18 @@
-LSM303DLHC Ultra Compact High Perfomance E-compass 3D Accelerometer and 3D
-Magnetometer Module.
+### LSM303DLHC 3D Accelerometer and 3D Magnetometer Driver
 
-LSM303DLHC 3D Accelerometer and 3D Magnetometer module Develop documentation.
-LSM303DLHC driver driven by the 'lsm303dlhc_acc' and 'lsm303dlhc_mag' to from.
-Development there driver are divided into three parts. First write the device
-driver file, Then add the board support code. Third, modify the kernel
-configuration.
+LSM303DLHC Ultra Compact High Perfomance E-compass 3D Accelerometer and 3D Magnetometer module driver.
 
 1. First developed LSM303DLHC Accelerometer driver.
 
-(1). Frist enter the 'src' directory.
+1. Frist enter the 'src' directory.
         ===> $: cd src/acc
-(2). Edit the 'Makefile' file, set the correct kernel directory 'KERN_DIR'.
+2. Edit the 'Makefile' file, set the correct kernel directory 'KERN_DIR'.
         ===> $: vim Makefile
-(3). Copy the driver files to the 'hwmon' directory.
+3. Copy the driver files to the 'hwmon' directory.
         ===> $: make cp
-(4). Add board-level support code.
+4. Add board-level support code.
         ===> $: vim arch/arm/plat-s5p4418/realarm/device.c
-(5). Add the code in the appropriate place.
+5. Add the code in the appropriate place.
         CODE 1:
 
                 #if defined(CONFIG_SENSORS_LSM303DLHC_ACC) || defined(CONFIG_SENSORS_LSM303DLHC_ACC_MODULE)
@@ -37,7 +32,8 @@ configuration.
                         printk("plat: add accelerometer lsm303dlhc\n");
                         i2c_register_board_info(1, &lsm303dlhc_acc_i2c_bdi, 1);
                 #endif
-(6). Modify the kernel configuration file for lsm303dlhc accelerometer.
+      
+6. Modify the kernel configuration file for lsm303dlhc accelerometer.
         ===> $: vim drivers/hwmon/Kconfig
         ADD CODE:
 
