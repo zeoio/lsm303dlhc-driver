@@ -831,7 +831,7 @@ static void __exit lsm303dlhc_mag_exit(void)
 	i2c_del_driver(&lsm303dlhc_driver);
 }
 
-MODULE_AUTHOR("Sarlor <zoreorg@gmail.com>");
+MODULE_AUTHOR("Sarlor <kinsleer@outlook.com>");
 MODULE_DESCRIPTION("LSM303DLHC Magnetometer Driver");
 MODULE_LICENSE("GPL");
 
